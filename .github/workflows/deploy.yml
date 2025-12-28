@@ -32,9 +32,6 @@ jobs:
       - name: Organize Files
         run: |
           mkdir out
-          # Move built files into subfolders for the website
-          # Note: If using Vite, folders are 'dist'. If CRA, folders are 'build'
-          cp -r to-do-app/dist ./out/to-do-app
           cp -r excuse-app/dist ./out/excuse-app
           cp -r to-do-app/dist ./out/toggle-switch
 
