@@ -1,0 +1,12 @@
+{
+  "name": "react-projects",
+  "private": true,
+  "workspaces": [
+    "to-do-app",
+    "excuse-app",
+    "toggle-switch"
+  ],
+  "scripts": {
+    "build-all": "npm run build --workspaces"
+  }
+}

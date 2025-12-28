@@ -1,8 +1,13 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
+// https://vite.dev/config/
 export default defineConfig({
-  base: '/to-do-app/',  
   plugins: [react()],
+  base: '/react-projects/to-do-app/',
+  server: {
+    watch: {
+      usePolling: true,
+    },
+  },
 })
