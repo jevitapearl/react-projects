@@ -27,7 +27,6 @@ jobs:
           npm run build -w to-do-app
           npm run build -w excuse-app
           npm run build -w toggle-switch
-          # Add more build lines here as you add more apps
 
       - name: Organize Files
         run: |
