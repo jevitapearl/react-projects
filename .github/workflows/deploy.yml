@@ -31,8 +31,9 @@ jobs:
       - name: Organize Files
         run: |
           mkdir out
+          cp -r to-do-app/dist ./out/to-do-app
           cp -r excuse-app/dist ./out/excuse-app
-          cp -r to-do-app/dist ./out/toggle-switch
+          cp -r toggle-switch/dist ./out/toggle-switch
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
