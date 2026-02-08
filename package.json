@@ -4,7 +4,8 @@
   "workspaces": [
     "to-do-app",
     "excuse-app",
-    "toggle-switch"
+    "toggle-switch",
+    "movies"
   ],
   "scripts": {
     "build-all": "npm run build --workspaces"

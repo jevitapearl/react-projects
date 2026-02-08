@@ -27,6 +27,7 @@ jobs:
           npm run build -w to-do-app
           npm run build -w excuse-app
           npm run build -w toggle-switch
+          npm run build -w movies
 
       - name: Organize Files
         run: |
@@ -34,6 +35,7 @@ jobs:
           cp -r to-do-app/dist ./out/to-do-app
           cp -r excuse-app/dist ./out/excuse-app
           cp -r toggle-switch/dist ./out/toggle-switch
+          cp -r toggle-switch/dist ./out/movies
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

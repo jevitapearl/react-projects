@@ -1,18 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css'
 
 function App() {
-  const [displayExcuse,setExcuse] = useState("");
+  const [displayExcuse,setDisplayExcuse] = useState("");
+  const [excuseNumber, setExcuseNumber] = useState(0);
+  const [excuseURL, setExcuseURL] = useState("");
+
+  useEffect(() => {
+    fetch(excuseURL)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data)
+      setDisplayExcuse(data[0].excuse);
+    })
+    .catch((error) => console.log(error))
+  }, 
+  [excuseNumber]);
 
   function generateExcuse(excuse){
-    const url = "https://excuser-three.vercel.app/v1/excuse/"+excuse;
-    
-    fetch(url)
-    .then(response => response.json())
-    .then((data) => {
-      console.log(data.excuse)
-      setExcuse(data[0].excuse);
-    })
+    setExcuseURL("https://excuser-three.vercel.app/v1/excuse/"+excuse);
+    setExcuseNumber(excuseNumber+1);
   }
 
   return (
