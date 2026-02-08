@@ -18,6 +18,7 @@ function App() {
       path: "/",
       element: <AppLayout/>,
       errorElement: <ErrorPage/>,
+      hydrateFallbackElement: <Loading />,
       children: [
         {
           path: "/",
