@@ -23,6 +23,8 @@ jobs:
         run: npm install 
 
       - name: Build All Apps
+        env:
+          VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
         run: |
           npm run build -w to-do-app
           npm run build -w excuse-app

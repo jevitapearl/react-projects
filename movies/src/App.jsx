@@ -1,5 +1,5 @@
 import './App.css'
-import { createBrowserRouter, RouterProvider, Outlet, useNavigation } from "react-router-dom"
+import { createHashRouter, RouterProvider, Outlet, useNavigation } from "react-router-dom"
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Loading from './components/Loading';
@@ -13,7 +13,7 @@ import { getMovieDesc } from './api/getMovieDesc';
 import MovieDesc from './components/MovieDesc';
 
 function App() {
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       path: "/",
       element: <AppLayout/>,
@@ -44,7 +44,9 @@ function App() {
         }
       ]
     }
-  ]);
+  ], {
+    basename: "/movies" 
+  });
 
   return (
     <RouterProvider router={router}/>
