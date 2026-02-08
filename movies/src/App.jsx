@@ -42,11 +42,9 @@ function App() {
           element: <MovieDesc/>,
           loader: getMovieDesc
         }
-      ]
+     ]
     }
-  ], {
-    basename: "/movies" 
-  });
+  ]);
 
   return (
     <RouterProvider router={router}/>
