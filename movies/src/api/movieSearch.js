@@ -1,10 +1,9 @@
-export async function getMovieDesc({params}){
-
+export async function movieSearch(){
   const API_KEY = "e9b0bc61";
 
   try{
-    const response = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&i=${params.movieID}&plot=full`);
-    
+    const response = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=${API_KEY}&s=avengers&page=1`);
+
     if (response.status === 401) {
       console.error("API Key is invalid or missing!");
       return null;
@@ -12,6 +11,7 @@ export async function getMovieDesc({params}){
 
     const data = await response.json();
     return data;
+    
   }
   catch(error){
     console.log(error)

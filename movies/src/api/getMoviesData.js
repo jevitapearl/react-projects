@@ -1,7 +1,8 @@
 export async function getMoviesData(){
+  const API_KEY = "e9b0bc61";
 
   try{
-    const response = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=${import.meta.env.VITE_API_KEY}&s=avengers&page=1`);
+    const response = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=${API_KEY}&s=avengers&page=1`);
 
     if (response.status === 401) {
       console.error("API Key is invalid or missing!");
@@ -10,7 +11,7 @@ export async function getMoviesData(){
 
     const data = await response.json();
     return data;
-
+    
   }
   catch(error){
     console.log(error)

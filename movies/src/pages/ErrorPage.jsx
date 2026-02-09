@@ -8,11 +8,13 @@ function ErrorPage(){
   const navigate = useNavigate()
 
   return(
-    <div>
-      The page you are looking for doesn't exist.
+    <div className="error-page">
+      <p>The page you are looking for doesn't exist.</p>
 
-      <button onClick={() => navigate(-1)}>Return to the previous page</button>
-      <button><NavLink to="/">Go to Home page</NavLink></button>
+      <div className="error-btns">
+        <button className="btn" onClick={() => navigate(-1)}>Return to the previous page</button>
+        <button className="btn"><NavLink to="/">Go to Home page</NavLink></button>
+      </div>
     </div>
   );
 }

@@ -1,14 +1,26 @@
 import { useLoaderData, NavLink } from "react-router-dom";
+import { useMemo } from "react";
+import SearchBar from "../components/SearchBar";
 
 
 function Movies(){
 
   const moviesData = useLoaderData();
 
+  const displayData = useMemo(() =>{
+    return moviesData.Search;
+  },
+  [moviesData.Search]);
+
+
   return(
     <div>
+      <div className="search-bar">
+        <SearchBar></SearchBar>
+      </div>
+      
       <ul className="movie-grid">
-        {moviesData.Search.map(({imdbID, Poster, Title, Year}) => {
+        {displayData.map(({imdbID, Poster, Title, Year}) => {
           return(
             <li key={imdbID} className="movie-card">
               
