@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { movieSearch }  from "../api/movieSearch"
+import { movieSearch }  from "../api/movieSearch";
+import { NavLink } from "react-router-dom";
 
 function SearchBar(){
 
