@@ -15,9 +15,8 @@ function Movies(){
 
   return(
     <div>
-      <div className="search-bar">
-        <SearchBar></SearchBar>
-      </div>
+        <SearchBar/>
+
       
       <ul className="movie-grid">
         {displayData.map(({imdbID, Poster, Title, Year}) => {

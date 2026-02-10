@@ -1,8 +1,7 @@
-export async function movieSearch(){
-  const API_KEY = "e9b0bc61";
+export async function movieSearch(query){
 
   try{
-    const response = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=${API_KEY}&s=avengers&page=1`);
+    const response = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=${import.meta.env.VITE_API_KEY}&s=${query}&page=1`);
 
     if (response.status === 401) {
       console.error("API Key is invalid or missing!");
@@ -10,7 +9,7 @@ export async function movieSearch(){
     }
 
     const data = await response.json();
-    return data;
+    return data.Search;
     
   }
   catch(error){
